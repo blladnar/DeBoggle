@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4AC1465CD9B0023548D /* UIKit.framework */; };
+		70B6D4AF1465CD9B0023548D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4AE1465CD9B0023548D /* Foundation.framework */; };
+		70B6D4B11465CD9B0023548D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4B01465CD9B0023548D /* CoreGraphics.framework */; };
+		70B6D4B71465CD9B0023548D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4B51465CD9B0023548D /* InfoPlist.strings */; };
+		70B6D4B91465CD9B0023548D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4B81465CD9B0023548D /* main.m */; };
+		70B6D4BD1465CD9C0023548D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BC1465CD9C0023548D /* AppDelegate.m */; };
+		70B6D4C01465CD9C0023548D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BF1465CD9C0023548D /* MasterViewController.m */; };
+		70B6D4C31465CD9C0023548D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4C21465CD9C0023548D /* DetailViewController.m */; };
+		70B6D4C61465CD9C0023548D /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4C41465CD9C0023548D /* MasterViewController.xib */; };
+		70B6D4C91465CD9C0023548D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4C71465CD9C0023548D /* DetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		70B6D4A81465CD9B0023548D /* DeBoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeBoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B6D4AC1465CD9B0023548D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		70B6D4AE1465CD9B0023548D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70B6D4B01465CD9B0023548D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		70B6D4B41465CD9B0023548D /* DeBoggle-Info.plist */ = {isa = PBXFileReference; path = "DeBoggle-Info.plist"; sourceTree = "<group>"; };
+		70B6D4B61465CD9B0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70B6D4B81465CD9B0023548D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70B6D4BA1465CD9C0023548D /* DeBoggle-Prefix.pch */ = {isa = PBXFileReference; path = "DeBoggle-Prefix.pch"; sourceTree = "<group>"; };
+		70B6D4BB1465CD9C0023548D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		70B6D4BC1465CD9C0023548D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70B6D4BE1465CD9C0023548D /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		70B6D4BF1465CD9C0023548D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		70B6D4C11465CD9C0023548D /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		70B6D4C21465CD9C0023548D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		70B6D4C51465CD9C0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		70B6D4C81465CD9C0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70B6D4A51465CD9B0023548D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */,
+				70B6D4AF1465CD9B0023548D /* Foundation.framework in Frameworks */,
+				70B6D4B11465CD9B0023548D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70B6D49D1465CD9B0023548D = {
+			isa = PBXGroup;
+			children = (
+				70B6D4B21465CD9B0023548D /* DeBoggle */,
+				70B6D4AB1465CD9B0023548D /* Frameworks */,
+				70B6D4A91465CD9B0023548D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70B6D4A91465CD9B0023548D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70B6D4A81465CD9B0023548D /* DeBoggle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70B6D4AB1465CD9B0023548D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70B6D4AC1465CD9B0023548D /* UIKit.framework */,
+				70B6D4AE1465CD9B0023548D /* Foundation.framework */,
+				70B6D4B01465CD9B0023548D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70B6D4B21465CD9B0023548D /* DeBoggle */ = {
+			isa = PBXGroup;
+			children = (
+				70B6D4BB1465CD9C0023548D /* AppDelegate.h */,
+				70B6D4BC1465CD9C0023548D /* AppDelegate.m */,
+				70B6D4BE1465CD9C0023548D /* MasterViewController.h */,
+				70B6D4BF1465CD9C0023548D /* MasterViewController.m */,
+				70B6D4C11465CD9C0023548D /* DetailViewController.h */,
+				70B6D4C21465CD9C0023548D /* DetailViewController.m */,
+				70B6D4C41465CD9C0023548D /* MasterViewController.xib */,
+				70B6D4C71465CD9C0023548D /* DetailViewController.xib */,
+				70B6D4B31465CD9B0023548D /* Supporting Files */,
+			);
+			path = DeBoggle;
+			sourceTree = "<group>";
+		};
+		70B6D4B31465CD9B0023548D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70B6D4B41465CD9B0023548D /* DeBoggle-Info.plist */,
+				70B6D4B51465CD9B0023548D /* InfoPlist.strings */,
+				70B6D4B81465CD9B0023548D /* main.m */,
+				70B6D4BA1465CD9C0023548D /* DeBoggle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70B6D4A71465CD9B0023548D /* DeBoggle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B6D4CC1465CD9C0023548D /* Build configuration list for PBXNativeTarget "DeBoggle" */;
+			buildPhases = (
+				70B6D4A41465CD9B0023548D /* Sources */,
+				70B6D4A51465CD9B0023548D /* Frameworks */,
+				70B6D4A61465CD9B0023548D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeBoggle;
+			productName = DeBoggle;
+			productReference = 70B6D4A81465CD9B0023548D /* DeBoggle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70B6D49F1465CD9B0023548D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 70B6D4A21465CD9B0023548D /* Build configuration list for PBXProject "DeBoggle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 70B6D49D1465CD9B0023548D;
+			productRefGroup = 70B6D4A91465CD9B0023548D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70B6D4A71465CD9B0023548D /* DeBoggle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70B6D4A61465CD9B0023548D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B6D4B71465CD9B0023548D /* InfoPlist.strings in Resources */,
+				70B6D4C61465CD9C0023548D /* MasterViewController.xib in Resources */,
+				70B6D4C91465CD9C0023548D /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70B6D4A41465CD9B0023548D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B6D4B91465CD9B0023548D /* main.m in Sources */,
+				70B6D4BD1465CD9C0023548D /* AppDelegate.m in Sources */,
+				70B6D4C01465CD9C0023548D /* MasterViewController.m in Sources */,
+				70B6D4C31465CD9C0023548D /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70B6D4B51465CD9B0023548D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70B6D4B61465CD9B0023548D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		70B6D4C41465CD9C0023548D /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70B6D4C51465CD9C0023548D /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		70B6D4C71465CD9C0023548D /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70B6D4C81465CD9C0023548D /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70B6D4CA1465CD9C0023548D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		70B6D4CB1465CD9C0023548D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70B6D4CD1465CD9C0023548D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeBoggle/DeBoggle-Prefix.pch";
+				INFOPLIST_FILE = "DeBoggle/DeBoggle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		70B6D4CE1465CD9C0023548D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeBoggle/DeBoggle-Prefix.pch";
+				INFOPLIST_FILE = "DeBoggle/DeBoggle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70B6D4A21465CD9B0023548D /* Build configuration list for PBXProject "DeBoggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B6D4CA1465CD9C0023548D /* Debug */,
+				70B6D4CB1465CD9C0023548D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B6D4CC1465CD9C0023548D /* Build configuration list for PBXNativeTarget "DeBoggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B6D4CD1465CD9C0023548D /* Debug */,
+				70B6D4CE1465CD9C0023548D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70B6D49F1465CD9B0023548D /* Project object */;
+}
