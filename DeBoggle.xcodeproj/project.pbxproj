@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7011C18A146E4F1700BE2654 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7011C188146E4F1700BE2654 /* ResultsViewController.m */; };
+		7011C18B146E4F1700BE2654 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7011C189146E4F1700BE2654 /* ResultsViewController.xib */; };
+		7011C194146E5CFC00BE2654 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7011C193146E5CFC00BE2654 /* MessageUI.framework */; };
+		7011C196146EF0D400BE2654 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7011C195146EF0D400BE2654 /* GameKit.framework */; };
+		7011C19A146EF7B000BE2654 /* ScrumbledIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7011C199146EF7B000BE2654 /* ScrumbledIcon.png */; };
+		7011C19C146EF7C900BE2654 /* ScrumbledIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7011C19B146EF7C900BE2654 /* ScrumbledIcon@2x.png */; };
+		7011C1A0146F163800BE2654 /* scrumbledBanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7011C19F146F163800BE2654 /* scrumbledBanner@2x.png */; };
+		7011C1A2146F2A2C00BE2654 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7011C1A1146F2A2C00BE2654 /* Twitter.framework */; };
+		7011C1A4146F2F7200BE2654 /* scrumButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7011C1A3146F2F7200BE2654 /* scrumButton@2x.png */; };
+		7011C1A6146F305900BE2654 /* scrumBannerButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7011C1A5146F305900BE2654 /* scrumBannerButton@2x.png */; };
 		70459DD114661D7500998C76 /* DescrumbledIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */; };
 		70459DD214661D7500998C76 /* DescrumbledIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 70459DD014661D7500998C76 /* DescrumbledIcon.png */; };
 		70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4AC1465CD9B0023548D /* UIKit.framework */; };
@@ -27,6 +37,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7011C187146E4F1700BE2654 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		7011C188146E4F1700BE2654 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		7011C189146E4F1700BE2654 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
+		7011C193146E5CFC00BE2654 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		7011C195146EF0D400BE2654 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		7011C199146EF7B000BE2654 /* ScrumbledIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrumbledIcon.png; sourceTree = "<group>"; };
+		7011C19B146EF7C900BE2654 /* ScrumbledIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScrumbledIcon@2x.png"; sourceTree = "<group>"; };
+		7011C19F146F163800BE2654 /* scrumbledBanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scrumbledBanner@2x.png"; sourceTree = "<group>"; };
+		7011C1A1146F2A2C00BE2654 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		7011C1A3146F2F7200BE2654 /* scrumButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scrumButton@2x.png"; sourceTree = "<group>"; };
+		7011C1A5146F305900BE2654 /* scrumBannerButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scrumBannerButton@2x.png"; sourceTree = "<group>"; };
 		70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DescrumbledIcon@2x.png"; sourceTree = "<group>"; };
 		70459DD014661D7500998C76 /* DescrumbledIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DescrumbledIcon.png; sourceTree = "<group>"; };
 		70B6D4A81465CD9B0023548D /* DeBoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeBoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7011C1A2146F2A2C00BE2654 /* Twitter.framework in Frameworks */,
+				7011C196146EF0D400BE2654 /* GameKit.framework in Frameworks */,
+				7011C194146E5CFC00BE2654 /* MessageUI.framework in Frameworks */,
 				70B6D4E8146600D80023548D /* iAd.framework in Frameworks */,
 				70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */,
 				70B6D4AF1465CD9B0023548D /* Foundation.framework in Frameworks */,
@@ -73,6 +97,9 @@
 		70B6D49D1465CD9B0023548D = {
 			isa = PBXGroup;
 			children = (
+				7011C1A1146F2A2C00BE2654 /* Twitter.framework */,
+				7011C195146EF0D400BE2654 /* GameKit.framework */,
+				7011C193146E5CFC00BE2654 /* MessageUI.framework */,
 				70B6D4E7146600D80023548D /* iAd.framework */,
 				70B6D4B21465CD9B0023548D /* DeBoggle */,
 				70B6D4AB1465CD9B0023548D /* Frameworks */,
@@ -116,6 +143,9 @@
 				70B6D4C41465CD9C0023548D /* MasterViewController.xib */,
 				70B6D4C71465CD9C0023548D /* DetailViewController.xib */,
 				70B6D4B31465CD9B0023548D /* Supporting Files */,
+				7011C187146E4F1700BE2654 /* ResultsViewController.h */,
+				7011C188146E4F1700BE2654 /* ResultsViewController.m */,
+				7011C189146E4F1700BE2654 /* ResultsViewController.xib */,
 			);
 			path = DeBoggle;
 			sourceTree = "<group>";
@@ -123,6 +153,11 @@
 		70B6D4B31465CD9B0023548D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7011C1A5146F305900BE2654 /* scrumBannerButton@2x.png */,
+				7011C1A3146F2F7200BE2654 /* scrumButton@2x.png */,
+				7011C19F146F163800BE2654 /* scrumbledBanner@2x.png */,
+				7011C19B146EF7C900BE2654 /* ScrumbledIcon@2x.png */,
+				7011C199146EF7B000BE2654 /* ScrumbledIcon.png */,
 				70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */,
 				70459DD014661D7500998C76 /* DescrumbledIcon.png */,
 				70B6D4D41465D4B50023548D /* dict.txt */,
@@ -190,6 +225,12 @@
 				70B6D4D51465D4B50023548D /* dict.txt in Resources */,
 				70459DD114661D7500998C76 /* DescrumbledIcon@2x.png in Resources */,
 				70459DD214661D7500998C76 /* DescrumbledIcon.png in Resources */,
+				7011C18B146E4F1700BE2654 /* ResultsViewController.xib in Resources */,
+				7011C19A146EF7B000BE2654 /* ScrumbledIcon.png in Resources */,
+				7011C19C146EF7C900BE2654 /* ScrumbledIcon@2x.png in Resources */,
+				7011C1A0146F163800BE2654 /* scrumbledBanner@2x.png in Resources */,
+				7011C1A4146F2F7200BE2654 /* scrumButton@2x.png in Resources */,
+				7011C1A6146F305900BE2654 /* scrumBannerButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +248,7 @@
 				70B6D4D11465CF3B0023548D /* boggleSolver.cpp in Sources */,
 				70B6D4D81465E6A60023548D /* NextableTextField.m in Sources */,
 				70B6D4E61465FF250023548D /* UIBarButtonItem+Tint.m in Sources */,
+				7011C18A146E4F1700BE2654 /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

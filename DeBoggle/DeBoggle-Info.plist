@@ -5,16 +5,16 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Descrumbled</string>
+	<string>Scrumbled</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>DescrumbledIcon.png</string>
-		<string>DescrumbledIcon@2x.png</string>
+		<string>ScrumbledIcon.png</string>
+		<string>ScrumbledIcon@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.randall.Descrumbled</string>
+	<string>com.randall.Scrumbled</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -29,6 +29,17 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>scrumbled</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

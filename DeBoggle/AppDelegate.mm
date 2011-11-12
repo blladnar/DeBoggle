@@ -74,4 +74,25 @@
     */
 }
 
+- (BOOL)application:(UIApplication *)application 
+            openURL:(NSURL *)url 
+  sourceApplication:(NSString*)sourceApplication 
+         annotation:(id)annotation
+{
+   NSString *urlString = [[url absoluteString] substringFromIndex:[@"scrumbled://" length]];
+   NSArray *parts = [urlString componentsSeparatedByString:@"/"];
+   NSString *method = [parts objectAtIndex:0];
+   NSString *argument = [parts lastObject];
+   
+   if( [method isEqualToString:@"board"] )
+   {
+      int boardSize = sqrt([argument length]);
+      [self.navigationController popToRootViewControllerAnimated:NO];
+      [(MasterViewController*)[self.navigationController topViewController] generateBoardForSize:boardSize withBoard:argument];
+   }
+   
+   return YES;
+   
+}
+
 @end
