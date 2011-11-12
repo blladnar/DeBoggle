@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "UIBarButtonItem+Tint.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -16,6 +17,7 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize words;
 
 - (void)dealloc
 {
@@ -98,9 +100,97 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-      self.title = NSLocalizedString(@"Detail", @"Detail");
+       self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithTint:[UIColor colorWithRed:0.000 green:0.775 blue:0.187 alpha:1.000] andTitle:@"Next" andTarget:self andSelector:@selector(nextPage)];
     }
     return self;
 }
+
+-(void)nextPage
+{
+   NSLog(@"Next Page");
+   [self.tableView scrollToRowAtIndexPath:[[self.tableView indexPathsForVisibleRows] lastObject] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+// Customize the number of sections in the table view.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+   return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+   return self.words.count;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   static NSString *CellIdentifier = @"Cell";
+   
+   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+   if (cell == nil) {
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+   }
+   
+   // Configure the cell.
+   cell.textLabel.text = [self.words objectAtIndex:indexPath.row];
+   return cell;
+}
+
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
+
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source.
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+ }   
+ }
+ */
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   if( !NSClassFromString(@"UIReferenceLibraryViewController") )
+   {
+      return;
+   }
+   
+   UIReferenceLibraryViewController *dictionaryView = [[[UIReferenceLibraryViewController alloc] initWithTerm:[self.words objectAtIndex:indexPath.row]] autorelease];
+   [self presentModalViewController:dictionaryView animated:YES];
+  // [self.navigationController pushViewController:dictionaryView animated:YES];
+   //   if (!self.detailViewController) {
+//      self.detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
+//   }
+//   [self.navigationController pushViewController:self.detailViewController animated:YES];
+}
+
 							
 @end

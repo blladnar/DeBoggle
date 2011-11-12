@@ -3,6 +3,7 @@
 //
 
 #import <Availability.h>
+#import <mach/mach_time.h>
 
 #ifndef __IPHONE_4_0
 #warning "This project uses features only available in iOS SDK 4.0 and later."
@@ -12,3 +13,6 @@
    #import <UIKit/UIKit.h>
    #import <Foundation/Foundation.h>
 #endif
+
+#define StopWatchStart() uint64_t startTime = mach_absolute_time()
+#define StopWatchEnd(caption) uint64_t elapsed = mach_absolute_time() - startTime; static mach_timebase_info_data_t sTimebaseInfo; if ( sTimebaseInfo.denom == 0 ) { (void) mach_timebase_info(&sTimebaseInfo); } uint64_t elapsedNano = elapsed * sTimebaseInfo.numer / sTimebaseInfo.denom / 1000000; NSLog(@"%s: %qu ms\n", caption, elapsedNano)

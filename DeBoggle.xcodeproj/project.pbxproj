@@ -7,35 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70459DD114661D7500998C76 /* DescrumbledIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */; };
+		70459DD214661D7500998C76 /* DescrumbledIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 70459DD014661D7500998C76 /* DescrumbledIcon.png */; };
 		70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4AC1465CD9B0023548D /* UIKit.framework */; };
 		70B6D4AF1465CD9B0023548D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4AE1465CD9B0023548D /* Foundation.framework */; };
 		70B6D4B11465CD9B0023548D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4B01465CD9B0023548D /* CoreGraphics.framework */; };
 		70B6D4B71465CD9B0023548D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4B51465CD9B0023548D /* InfoPlist.strings */; };
 		70B6D4B91465CD9B0023548D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4B81465CD9B0023548D /* main.m */; };
-		70B6D4BD1465CD9C0023548D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BC1465CD9C0023548D /* AppDelegate.m */; };
-		70B6D4C01465CD9C0023548D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BF1465CD9C0023548D /* MasterViewController.m */; };
+		70B6D4BD1465CD9C0023548D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BC1465CD9C0023548D /* AppDelegate.mm */; };
+		70B6D4C01465CD9C0023548D /* MasterViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4BF1465CD9C0023548D /* MasterViewController.mm */; };
 		70B6D4C31465CD9C0023548D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4C21465CD9C0023548D /* DetailViewController.m */; };
 		70B6D4C61465CD9C0023548D /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4C41465CD9C0023548D /* MasterViewController.xib */; };
 		70B6D4C91465CD9C0023548D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4C71465CD9C0023548D /* DetailViewController.xib */; };
+		70B6D4D11465CF3B0023548D /* boggleSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4CF1465CF3B0023548D /* boggleSolver.cpp */; };
+		70B6D4D51465D4B50023548D /* dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D4D41465D4B50023548D /* dict.txt */; };
+		70B6D4D81465E6A60023548D /* NextableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4D71465E6A60023548D /* NextableTextField.m */; };
+		70B6D4E61465FF250023548D /* UIBarButtonItem+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D4E51465FF250023548D /* UIBarButtonItem+Tint.m */; };
+		70B6D4E8146600D80023548D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B6D4E7146600D80023548D /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DescrumbledIcon@2x.png"; sourceTree = "<group>"; };
+		70459DD014661D7500998C76 /* DescrumbledIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DescrumbledIcon.png; sourceTree = "<group>"; };
 		70B6D4A81465CD9B0023548D /* DeBoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeBoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B6D4AC1465CD9B0023548D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70B6D4AE1465CD9B0023548D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70B6D4B01465CD9B0023548D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		70B6D4B41465CD9B0023548D /* DeBoggle-Info.plist */ = {isa = PBXFileReference; path = "DeBoggle-Info.plist"; sourceTree = "<group>"; };
+		70B6D4B41465CD9B0023548D /* DeBoggle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeBoggle-Info.plist"; sourceTree = "<group>"; };
 		70B6D4B61465CD9B0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70B6D4B81465CD9B0023548D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		70B6D4BA1465CD9C0023548D /* DeBoggle-Prefix.pch */ = {isa = PBXFileReference; path = "DeBoggle-Prefix.pch"; sourceTree = "<group>"; };
-		70B6D4BB1465CD9C0023548D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
-		70B6D4BC1465CD9C0023548D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		70B6D4BE1465CD9C0023548D /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
-		70B6D4BF1465CD9C0023548D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		70B6D4C11465CD9C0023548D /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		70B6D4BA1465CD9C0023548D /* DeBoggle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeBoggle-Prefix.pch"; sourceTree = "<group>"; };
+		70B6D4BB1465CD9C0023548D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70B6D4BC1465CD9C0023548D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		70B6D4BE1465CD9C0023548D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		70B6D4BF1465CD9C0023548D /* MasterViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MasterViewController.mm; sourceTree = "<group>"; };
+		70B6D4C11465CD9C0023548D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		70B6D4C21465CD9C0023548D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		70B6D4C51465CD9C0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		70B6D4C81465CD9C0023548D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		70B6D4CF1465CF3B0023548D /* boggleSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = boggleSolver.cpp; sourceTree = "<group>"; };
+		70B6D4D01465CF3B0023548D /* boggleSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boggleSolver.h; sourceTree = "<group>"; };
+		70B6D4D41465D4B50023548D /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict.txt; path = ../dict.txt; sourceTree = "<group>"; };
+		70B6D4D61465E6A60023548D /* NextableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextableTextField.h; sourceTree = "<group>"; };
+		70B6D4D71465E6A60023548D /* NextableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextableTextField.m; sourceTree = "<group>"; };
+		70B6D4E41465FF250023548D /* UIBarButtonItem+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Tint.h"; sourceTree = "<group>"; };
+		70B6D4E51465FF250023548D /* UIBarButtonItem+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Tint.m"; sourceTree = "<group>"; };
+		70B6D4E7146600D80023548D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B6D4E8146600D80023548D /* iAd.framework in Frameworks */,
 				70B6D4AD1465CD9B0023548D /* UIKit.framework in Frameworks */,
 				70B6D4AF1465CD9B0023548D /* Foundation.framework in Frameworks */,
 				70B6D4B11465CD9B0023548D /* CoreGraphics.framework in Frameworks */,
@@ -55,6 +73,7 @@
 		70B6D49D1465CD9B0023548D = {
 			isa = PBXGroup;
 			children = (
+				70B6D4E7146600D80023548D /* iAd.framework */,
 				70B6D4B21465CD9B0023548D /* DeBoggle */,
 				70B6D4AB1465CD9B0023548D /* Frameworks */,
 				70B6D4A91465CD9B0023548D /* Products */,
@@ -82,10 +101,16 @@
 		70B6D4B21465CD9B0023548D /* DeBoggle */ = {
 			isa = PBXGroup;
 			children = (
+				70B6D4E41465FF250023548D /* UIBarButtonItem+Tint.h */,
+				70B6D4E51465FF250023548D /* UIBarButtonItem+Tint.m */,
+				70B6D4D71465E6A60023548D /* NextableTextField.m */,
+				70B6D4D61465E6A60023548D /* NextableTextField.h */,
+				70B6D4CF1465CF3B0023548D /* boggleSolver.cpp */,
+				70B6D4D01465CF3B0023548D /* boggleSolver.h */,
 				70B6D4BB1465CD9C0023548D /* AppDelegate.h */,
-				70B6D4BC1465CD9C0023548D /* AppDelegate.m */,
+				70B6D4BC1465CD9C0023548D /* AppDelegate.mm */,
 				70B6D4BE1465CD9C0023548D /* MasterViewController.h */,
-				70B6D4BF1465CD9C0023548D /* MasterViewController.m */,
+				70B6D4BF1465CD9C0023548D /* MasterViewController.mm */,
 				70B6D4C11465CD9C0023548D /* DetailViewController.h */,
 				70B6D4C21465CD9C0023548D /* DetailViewController.m */,
 				70B6D4C41465CD9C0023548D /* MasterViewController.xib */,
@@ -98,6 +123,9 @@
 		70B6D4B31465CD9B0023548D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70459DCF14661D7500998C76 /* DescrumbledIcon@2x.png */,
+				70459DD014661D7500998C76 /* DescrumbledIcon.png */,
+				70B6D4D41465D4B50023548D /* dict.txt */,
 				70B6D4B41465CD9B0023548D /* DeBoggle-Info.plist */,
 				70B6D4B51465CD9B0023548D /* InfoPlist.strings */,
 				70B6D4B81465CD9B0023548D /* main.m */,
@@ -159,6 +187,9 @@
 				70B6D4B71465CD9B0023548D /* InfoPlist.strings in Resources */,
 				70B6D4C61465CD9C0023548D /* MasterViewController.xib in Resources */,
 				70B6D4C91465CD9C0023548D /* DetailViewController.xib in Resources */,
+				70B6D4D51465D4B50023548D /* dict.txt in Resources */,
+				70459DD114661D7500998C76 /* DescrumbledIcon@2x.png in Resources */,
+				70459DD214661D7500998C76 /* DescrumbledIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B6D4B91465CD9B0023548D /* main.m in Sources */,
-				70B6D4BD1465CD9C0023548D /* AppDelegate.m in Sources */,
-				70B6D4C01465CD9C0023548D /* MasterViewController.m in Sources */,
+				70B6D4BD1465CD9C0023548D /* AppDelegate.mm in Sources */,
+				70B6D4C01465CD9C0023548D /* MasterViewController.mm in Sources */,
 				70B6D4C31465CD9C0023548D /* DetailViewController.m in Sources */,
+				70B6D4D11465CF3B0023548D /* boggleSolver.cpp in Sources */,
+				70B6D4D81465E6A60023548D /* NextableTextField.m in Sources */,
+				70B6D4E61465FF250023548D /* UIBarButtonItem+Tint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +289,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeBoggle/DeBoggle-Prefix.pch";
 				INFOPLIST_FILE = "DeBoggle/DeBoggle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -263,10 +298,13 @@
 		70B6D4CE1465CD9C0023548D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Randall Brown";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeBoggle/DeBoggle-Prefix.pch";
 				INFOPLIST_FILE = "DeBoggle/DeBoggle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5EAF8721-69A0-4ED6-B491-DD3730E92B3B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -290,6 +328,7 @@
 				70B6D4CE1465CD9C0023548D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
