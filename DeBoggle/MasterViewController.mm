@@ -234,7 +234,17 @@
          dispatch_async(dispatch_get_main_queue(), ^{
             DetailViewController *dictionaryView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
             
-            dictionaryView.words = [self vectorToArray:validStrings];
+            NSArray *words = [self vectorToArray:validStrings];
+            
+            dictionaryView.words = [words sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+               
+               if( [obj1 length] > [obj2 length] )
+               {
+                  return NSOrderedAscending;
+               }
+               
+               return NSOrderedDescending;
+            }];
             
             [spinner stopAnimating];
             [self.navigationController pushViewController:dictionaryView animated:YES];
