@@ -74,4 +74,9 @@
     */
 }
 
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+   return YES;
+}
+
 @end
