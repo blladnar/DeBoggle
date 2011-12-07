@@ -33,7 +33,7 @@
    GKAchievement *achievement = [[[GKAchievement alloc] initWithIdentifier: achievementID] autorelease];
    if (achievement)
    {
-      achievement.percentComplete = percent;
+      achievement.percentComplete = percent*100.0;
       achievement.showsCompletionBanner = YES;
       [achievement reportAchievementWithCompletionHandler:^(NSError *error)
        {
@@ -230,7 +230,7 @@
    }
    [textFields removeAllObjects];
    
-   NSString *letters = @"abcdefghijklmnopqrstuvwxyz";
+   NSString *letters = @"aaaaaaaaabbccddddeeeeeeeeeeeeffggghiiiiiiiiijkllllmmnnnnnnooooooooppqrrrrrrssssttttttuuuuvvwwxyyz";
    
    float squareSize = 170/size;
    for( int i= 0; i < size; i++ )
@@ -250,7 +250,7 @@
 
          if( [newBoard length] == 0 )
          {
-            int randomNumber = arc4random() % 26;
+            int randomNumber = arc4random() % [letters length];
             letterField.text = [letters substringWithRange:NSMakeRange(randomNumber, 1)];
             [boardString appendString:[letters substringWithRange:NSMakeRange(randomNumber, 1)]];
          }
