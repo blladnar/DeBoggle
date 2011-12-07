@@ -9,12 +9,54 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DeBoggle/ResultsViewController.m"
-         timestampString = "342829828.135519"
+         timestampString = "342935039.303024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "-mailComposeController:didFinishWithResult:error:"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
+         landmarkName = "-reportAchievement:percent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DeBoggle/MasterViewController.mm"
+         timestampString = "343018772.119304"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "-reportAchievement:percent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DeBoggle/MasterViewController.mm"
+         timestampString = "343018936.708055"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "448"
+         endingLineNumber = "448"
+         landmarkName = "-solve:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DeBoggle/MasterViewController.mm"
+         timestampString = "343018936.708055"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "443"
+         endingLineNumber = "443"
+         landmarkName = "-solve:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

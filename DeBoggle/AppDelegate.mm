@@ -88,7 +88,7 @@
    {
       int boardSize = sqrt([argument length]);
       [self.navigationController popToRootViewControllerAnimated:NO];
-      [(MasterViewController*)[self.navigationController topViewController] generateBoardForSize:boardSize withBoard:argument];
+      [(MasterViewController*)[self.navigationController topViewController] playGameFromString:argument];
    }
    
    return YES;

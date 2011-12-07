@@ -14,8 +14,11 @@
 #import "NextableTextField.h"
 #import "UIBarButtonItem+Tint.h"
 #import "ResultsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MasterViewController()
+-(void)generateBoardForSize:(NSInteger)size withBoard:(NSString*)newBoard;
+-(void)resetGame;
 -(void)hideButtonsShowLabels;
 -(void)showButtonsHideLabels;
 @end
@@ -25,6 +28,22 @@
 
 @synthesize detailViewController = _detailViewController;
 
+-(void)reportAchievement:(NSString*)achievementID percent:(float)percent
+{
+   GKAchievement *achievement = [[[GKAchievement alloc] initWithIdentifier: achievementID] autorelease];
+   if (achievement)
+   {
+      achievement.percentComplete = percent;
+      achievement.showsCompletionBanner = YES;
+      [achievement reportAchievementWithCompletionHandler:^(NSError *error)
+       {
+          if (error != nil)
+          {
+             NSLog(@"%@",error);
+          }
+       }];
+   }
+}
 
 -(int)scoreForWord:(NSString*)word
 {
@@ -197,6 +216,11 @@
    }
 }
 
+- (IBAction)launchAppstore:(id)sender 
+{
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/descrumbled/id478640010?ls=1&mt=8"]];
+}
+
 -(void)generateBoardForSize:(NSInteger)size withBoard:(NSString*)newBoard
 {
    int index = 0;
@@ -233,7 +257,6 @@
          else
          {
             letterField.text = [newBoard substringWithRange:NSMakeRange(i*j+j, 1)];
-            letterField.hidden = YES;
             [boardString appendString:[newBoard substringWithRange:NSMakeRange(i*j+j, 1)]];
          }
          
@@ -251,7 +274,7 @@
       }
    }
    
-   waitForStart = [newBoard length] !=0;
+ //  waitForStart = [newBoard length] !=0;
    if( !waitForStart )
    {
       [self solve:nil];
@@ -364,6 +387,7 @@
    [usedWords removeAllObjects];
    wordsInPuzzle = 0;
    score = 0;
+   [boardString setString:@""];
    waitForStart = NO;
 }
 
@@ -375,6 +399,8 @@
       fourByFoursPlayed++;
       [[NSUserDefaults standardUserDefaults] setInteger:fourByFoursPlayed forKey:@"4x4GamesPlayed"];
       fourByFourLabel.text = [NSString stringWithFormat:@"%i games", fourByFoursPlayed];
+      [self reportAchievement:@"1004x4" percent:(float)fourByFoursPlayed/100.0];
+      [self reportAchievement:@"4x41000" percent:(float)fourByFoursPlayed/1000.0];
    }
    else if( gameTime == 180.0 )
    {
@@ -382,16 +408,22 @@
       fiveByFivesPlayed++;
       [[NSUserDefaults standardUserDefaults] setInteger:fiveByFivesPlayed forKey:@"5x5GamesPlayed"];
       fiveByFiveLabel.text = [NSString stringWithFormat:@"%i games",fiveByFivesPlayed];
+      
+      [self reportAchievement:@"1005x5" percent:(float)fiveByFivesPlayed/100.0];
+      [self reportAchievement:@"5x51000" percent:(float)fiveByFivesPlayed/1000.0];
    }
-   
-   ResultsViewController *controller = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
-   controller.wordsUsed = usedWords;
-   controller.boardString = boardString;
-   [self.navigationController pushViewController:controller animated:YES];
    
    [self performSelectorOnMainThread:@selector(showButtonsHideLabels) withObject:nil waitUntilDone:YES];
    [updater invalidate];
    updater = nil;
+   
+   ResultsViewController *controller = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+   controller.wordsUsed = usedWords;
+   controller.validWords = validWords;
+   controller.boardString = boardString;
+   [self.navigationController pushViewController:controller animated:YES];
+   
+
 }
 
 -(void)updateTimer
@@ -511,17 +543,56 @@
 
 - (IBAction)changeTo5x5:(id)sender 
 {
-   gameTime = 180.0;
-   [self resetGame];
-   [self hideButtonsShowLabels];
-   [self generateBoardForSize:5 withBoard:nil];
+   if( !loadingDictionary && dictionary.size() > 0 )
+   {
+      gameTime = 180.0;
+      [self resetGame];
+      [self hideButtonsShowLabels];
+      [self generateBoardForSize:5 withBoard:nil];
+   }
 }
 
 - (IBAction)chageTo4x4:(id)sender 
 {
-   gameTime = 120.0;
+   if( !loadingDictionary && dictionary.size() > 0 )
+   {
+      gameTime = 120.0;
+      [self resetGame];
+      [self hideButtonsShowLabels];
+      [self generateBoardForSize:4 withBoard:nil];
+   }
+}
+
+-(void)playGameFromString:(NSString*)board
+{
+   int size = sqrt([board length]);
+   if( size <=4 )
+   {
+      gameTime = 120.0;
+   }
+   else
+   {
+      gameTime = 180.0;
+   }
+   
    [self resetGame];
    [self hideButtonsShowLabels];
-   [self generateBoardForSize:4 withBoard:nil];
+   [self generateBoardForSize:size withBoard:board];
+}
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner
+{
+   banner.hidden = NO;
+   [UIView animateWithDuration:0.5 animations:^{
+      banner.layer.opacity = 1.0;
+   }];
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+   NSLog(@"%@",error);
+   [UIView animateWithDuration:0.5 animations:^{
+      banner.layer.opacity = 0.0;
+   }];
 }
 @end

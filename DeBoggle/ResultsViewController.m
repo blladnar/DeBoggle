@@ -9,11 +9,13 @@
 #import "ResultsViewController.h"
 #import "UIBarButtonItem+Tint.h"
 #import <Twitter/Twitter.h>
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ResultsViewController
 
 @synthesize wordsUsed;
 @synthesize boardString;
+@synthesize validWords;
 -(int)scoreForWord:(NSString*)word
 {
    int length = word.length;
@@ -41,11 +43,90 @@
    return 0;
 }
 
+-(void)reportAchievement:(NSString*)achievementID percent:(float)percent
+{
+   GKAchievement *achievement = [[[GKAchievement alloc] initWithIdentifier: achievementID] autorelease];
+   if (achievement)
+   {
+      achievement.percentComplete = percent;
+      achievement.showsCompletionBanner = YES;
+      [achievement reportAchievementWithCompletionHandler:^(NSError *error)
+       {
+          if (error != nil)
+          {
+             NSLog(@"%@",error);
+          }
+       }];
+   }
+}
+
+-(void)handleAchievements
+{
+   if( [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"descrumbled://board/"]] )
+   {
+      [self reportAchievement:@"Cheater" percent:100.0];
+   }
+   
+   BOOL playedGo = YES;
+   BOOL playedBlue = YES;
+   
+   int numberOfOver10Words = [[NSUserDefaults standardUserDefaults] integerForKey:@"numberOfOver10Words"];
+   
+   int size = sqrt( [self.boardString length] );
+
+   if( [self.validWords count] == 0 )
+   {
+      [self reportAchievement:@"NoWords" percent:100.0];
+   }
+   
+   for( NSString *word in self.wordsUsed )
+   {
+      if( [word isEqualToString:@"go"] )
+      {
+         playedGo = YES;
+      }
+      else if( [word isEqualToString:@"blue"] )
+      {
+         playedBlue = YES;
+      }
+      
+      int perfectLength = size*size;
+      if( word.length == perfectLength )
+      {
+         if( size == 4 )
+         {
+            [self reportAchievement:@"Perfect4x4" percent:100.0];
+         }
+         else if( size == 5 )
+         {
+            [self reportAchievement:@"Perfect5x5" percent:100.0];
+         }
+      }
+      
+      if( word.length >= 10 )
+      {
+         numberOfOver10Words++;
+      }
+         
+      
+   }
+   
+   [[NSUserDefaults standardUserDefaults] setInteger:numberOfOver10Words forKey:@"numberOfOver10Words"];
+   [[NSUserDefaults standardUserDefaults] synchronize];
+   [self reportAchievement:@"5Over10" percent:(float)numberOfOver10Words/5.0];
+   
+   if( playedGo && playedBlue )
+   {
+      [self reportAchievement:@"GoBlue" percent:100.0];
+   }
+   
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"How'd you do?";
     }
     return self;
 }
@@ -106,7 +187,7 @@
       {
          MFMailComposeViewController *textController = [[[MFMailComposeViewController alloc] init] autorelease];
          textController.mailComposeDelegate = self;
-         [textController setMessageBody:[NSString stringWithFormat:@"Can you beat my score of %i on this board %@", score,[self boardURL]] isHTML:NO]; 
+         [textController setMessageBody:[NSString stringWithFormat:@"Can you beat my score of %i on this board? %@", score,[self boardURL]] isHTML:NO]; 
          [self presentModalViewController:textController animated:YES];
       }
       
@@ -119,6 +200,8 @@
          if( [TWTweetComposeViewController canSendTweet] )
          {
             TWTweetComposeViewController *controller = [[[TWTweetComposeViewController alloc] init] autorelease];
+            [controller setInitialText:[NSString stringWithFormat:@"Can you beat my score of %i on this board? %@", score,[self boardURL]]];
+            
             controller.completionHandler = ^(TWTweetComposeViewControllerResult result){
                [self dismissModalViewControllerAnimated:YES];
             }; 
@@ -137,6 +220,20 @@
    for( NSString *word in self.wordsUsed )
    {
       score+= [self scoreForWord:word];
+   }
+   
+
+   if( score > 100 )
+   {
+      [self reportAchievement:@"Over100" percent:100.0];
+   }
+   else if( score > 50 )
+   {
+      [self reportAchievement:@"Over50" percent:100.0];
+   }
+   else if( score > 20 )
+   {
+      [self reportAchievement:@"Over20" percent:100.0];
    }
    
    scoreLabel.text = [NSString stringWithFormat:@"%i",score];
@@ -201,7 +298,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   return [self.wordsUsed count];
+   if( section == 0 )
+      return [self.wordsUsed count];
+   
+   if( section == 1 )
+      return [self.validWords count];
+   
+   return 0;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+   return 2;
 }
 
 // Customize the appearance of table view cells.
@@ -215,9 +323,29 @@
       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
    }
    
-   // Configure the cell.
-   cell.textLabel.text = [self.wordsUsed objectAtIndex:indexPath.row];
+   if( indexPath.section == 0 )
+   {
+      cell.textLabel.text = [self.wordsUsed objectAtIndex:indexPath.row];
+   }
+   else if( indexPath.section == 1 )
+   {
+      cell.textLabel.text = [self.validWords objectAtIndex:indexPath.row];
+   }
    return cell;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+   if( section == 0 )
+   {
+      return @"Words you played";
+   }
+   
+   if( section == 1 )
+   {
+      return [NSString stringWithFormat:@"Words in puzzle (%i)",[self.validWords count]];
+   }
+   return @"";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -227,8 +355,38 @@
       return;
    }
    
-   UIReferenceLibraryViewController *dictionaryView = [[[UIReferenceLibraryViewController alloc] initWithTerm:[self.wordsUsed objectAtIndex:indexPath.row]] autorelease];
+   NSString *term;
+   if( indexPath.section == 0 )
+   {
+      term = [self.wordsUsed objectAtIndex:indexPath.row];
+   }
+   else if( indexPath.section == 1 )
+   {
+      term = [self.validWords objectAtIndex:indexPath.row];
+   }
+   
+   UIReferenceLibraryViewController *dictionaryView = [[[UIReferenceLibraryViewController alloc] initWithTerm:term] autorelease];
    [self presentModalViewController:dictionaryView animated:YES];
+}
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner
+{
+   banner.hidden = NO;
+   [UIView animateWithDuration:0.5 animations:^{
+      banner.layer.opacity = 1.0;
+   }];
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+   NSLog(@"%@",error);
+   [UIView animateWithDuration:0.5 animations:^{
+      banner.layer.opacity = 0.0;
+   }];
+}
+- (IBAction)descrumbledInAppStore:(id)sender 
+{
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/descrumbled/id478640010?ls=1&mt=8"]];
 }
 
 - (IBAction)viewHighScores:(id)sender 

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import <GameKit/GameKit.h>
+#import <iAd/iAd.h>
 
-@interface ResultsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface ResultsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate, GKLeaderboardViewControllerDelegate, ADBannerViewDelegate>
 {
    IBOutlet UILabel *scoreLabel;
    IBOutlet UILabel *wordsLabel;
@@ -18,8 +19,10 @@
    int words;
    
 }
+- (IBAction)descrumbledInAppStore:(id)sender;
 
 - (IBAction)viewHighScores:(id)sender;
 @property (nonatomic, retain) NSArray *wordsUsed;
+@property (nonatomic, retain) NSArray *validWords;
 @property (nonatomic, retain) NSString *boardString;
 @end  

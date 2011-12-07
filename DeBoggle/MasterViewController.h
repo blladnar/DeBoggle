@@ -46,8 +46,9 @@ using namespace std;
 - (IBAction)chageTo4x4:(id)sender;
 - (IBAction)showAchievements:(id)sender;
 - (IBAction)showLeaderboards:(id)sender;
+- (IBAction)launchAppstore:(id)sender;
 
--(void)generateBoardForSize:(NSInteger)size withBoard:(NSString*)newBoard;
+-(void)playGameFromString:(NSString*)board;
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
